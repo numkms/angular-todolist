@@ -1,0 +1,13 @@
+<li
+    class="todo-wrapper"
+    [ngClass]="{
+        'status-done': todo.status,
+        'status-undone': !todo.status
+    }"
+    (dblclick)="todo.status = !todo.status"
+>
+    <div>
+        <h2>{{ todo.title }}</h2>
+        <p>{{ todo.description }}</p>
+    </div>
+</li>

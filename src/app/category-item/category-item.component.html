@@ -1,0 +1,18 @@
+<li class="todo-category">
+    <h1>{{category.title}}</h1>
+    <a href="#" (click)="isNewTodoAddProcessing = true" *ngIf="!isNewTodoAddProcessing">Добавить еще +</a>
+    <div *ngIf="isNewTodoAddProcessing">
+        <input [(ngModel)]="newTodoTitle" placeholder="Название" style="width:100%;">
+        <br>
+        <br>
+        <textarea [(ngModel)]="newTodoDescription" placeholder="Описание" style="width:100%;">
+    </textarea>
+        <br>
+        <button (click)="createTodo()" style="width:100%; margin-bottom: 10px;">
+            Добавить
+        </button>
+    </div>
+    <ul>
+        <app-todo *ngFor="let todo of category.todos" [todo]="todo" ></app-todo>
+    </ul>
+</li>
